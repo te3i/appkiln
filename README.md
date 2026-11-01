@@ -1,4 +1,6 @@
-# Mobile App IPA GitHub Builder
+# AppKiln — Mobile Build Skill
+
+> صفحة تعريف ثنائية اللغة مع زر تبديل مستقل: [افتح AppKiln بالعربية والإنجليزية](https://te3i.github.io/appkiln/)
 
 [![Skill validation](https://img.shields.io/badge/skill-validated-22c55e)](SKILL.md)
 [![Flutter](https://img.shields.io/badge/Flutter-supported-02569B?logo=flutter)](SKILL.md)

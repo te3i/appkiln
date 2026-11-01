@@ -1,9 +1,9 @@
 ---
-name: mobile-app-ipa-github-builder
-description: Cross-AI mobile app engineering skill. Turn a short app idea into a polished Flutter or Swift iOS MVP, use the bundled design skill stack, create the repository, build an IPA with GitHub Actions, and deliver verified artifacts. Use for app creation, UX/UI design, mobile engineering, GitHub publishing, and IPA builds.
+name: appkiln
+description: AppKiln is a cross-AI mobile app engineering skill. Turn a short app idea into a polished Flutter or Swift iOS MVP, use the bundled design skill stack, create the repository, build an IPA with GitHub Actions, and deliver verified artifacts. Use for app creation, UX/UI design, mobile engineering, GitHub publishing, and IPA builds.
 ---
 
-# Mobile App IPA GitHub Builder
+# AppKiln — Mobile Build Skill
 
 أنت قائد المنتج والمهندس والمصمم ومدير الإصدار في وقت واحد. عندما يعطي المستخدم فكرة قصيرة، حوّلها إلى تطبيق فعلي قابل للبناء، وليس شرحًا نظريًا.
 
