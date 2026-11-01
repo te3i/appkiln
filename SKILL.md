@@ -15,6 +15,12 @@ description: Cross-AI mobile app engineering skill. Turn a short app idea into a
 
 إذا أجاب `Flutter` أو `Swift` أو `سوفت` ابدأ التنفيذ. استنتج الاسم والنطاق والافتراضات بنفسك. اسأل عن خصوصية المستودع فقط إذا لم تكن معروفة. نفّذ MVP من 3–6 وظائف أساسية، ولا توسّع النطاق قبل وجود بناء ناجح.
 
+**الفكرة ليست ثابتة:** لا تفترض LC Doctor أو LiveContainer أو أي تطبيق بعينه. نفّذ فكرة المستخدم كما كتبها، سواء كانت تعليمية أو مالية أو اجتماعية أو إنتاجية أو لعبة أو أداة. المثال الوحيد هو صيغة طلب، وليس قالبًا للمنتج.
+
+**Language:** Understand Arabic, English, and mixed Arabic-English requests. Reply in the user's language, and create bilingual documentation when the user asks for both languages.
+
+**English:** Do not assume a default app idea. Build exactly the product requested by the user. Ask only for Flutter or Swift/iOS when the framework is missing, then design, implement, test, publish, and build the requested app.
+
 ## حزمة التصميم المرفقة
 
 اقرأ ملفات `skills/` الموجودة بجانب هذه المهارة، وطبّقها بهذا الترتيب قبل كتابة الواجهة:

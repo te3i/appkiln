@@ -3,21 +3,33 @@
 [![Skill validation](https://img.shields.io/badge/skill-validated-22c55e)](SKILL.md)
 [![Flutter](https://img.shields.io/badge/Flutter-supported-02569B?logo=flutter)](SKILL.md)
 [![Swift](https://img.shields.io/badge/Swift%20%2F%20iOS-supported-F05138?logo=swift)](SKILL.md)
-[![Works with AI](https://img.shields.io/badge/AI-Claude%20%7C%20Gemini%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-111827)](SKILL.md)
+[![Any AI](https://img.shields.io/badge/AI-Claude%20%7C%20Gemini%20%7C%20Codex%20%7C%20Cursor%20%7C%20Copilot-111827)](SKILL.md)
 
-حزمة مهارات محمولة لتحويل فكرة قصيرة إلى تطبيق Flutter أو Swift/iOS مصمم باحتراف، مرفوع إلى GitHub، ومبني كـ IPA عبر GitHub Actions.
+## العربية
 
-## ماذا تفعل؟
+هذه ليست مهارة لتطبيق واحد، ولا تحتوي فكرة منتج افتراضية. اكتب أي فكرة تطبيق تريدها، وسيحوّلها الـ AI إلى MVP حقيقي بـ Flutter أو Swift/iOS، بعد أن يسألك عن التقنية إذا لم تحددها. بعدها ينفذ UX/UI، يبني Design System، ينشئ المشروع، يرفعه إلى GitHub، ويصنع IPA عبر GitHub Actions.
 
-تعطي الـ AI فكرة بسيطة مثل:
+مثال عام:
 
-> أريد تطبيقًا يحفظ ملفات IPA ويفحص توافقها مع LiveContainer.
+```text
+أريد تطبيق Flutter عربي لتسجيل المصاريف، مع تصنيفات وتقارير ونسخ احتياطي محلي. استخدم حزمة التصميم كاملة، ارفع المشروع إلى GitHub، وابنِ IPA.
+```
 
-ثم تطلب التقنية فقط إذا كانت غير محددة، وتنفذ التصميم، المشروع، الاختبارات، المستودع، GitHub Actions، وIPA artifact.
+المثال ليس منتجًا ثابتًا؛ يمكنك استبداله بأي فكرة: تطبيق تعليمي، اجتماعي، مالي، صحي، إنتاجي، لعبة، أداة ملفات، أو تطبيق خاص بمشروعك.
 
-## حزمة التصميم
+## English
 
-قبل كتابة الواجهة، يقرأ الـ AI هذه الوحدات بالترتيب:
+This is a product-agnostic skill. It does not assume LC Doctor, LiveContainer, or any default app idea. Describe any app you want, and the AI will turn it into a real Flutter or Swift/iOS MVP. It asks for the framework only when it is missing, applies the bundled design stack, creates the project, publishes it to GitHub, and builds a verified IPA with GitHub Actions.
+
+Example:
+
+```text
+Build a Swift iOS habit tracker with streaks, local persistence, reminders, and a polished accessible dark mode. Publish it to GitHub and build an IPA through Actions.
+```
+
+## Design skill stack / حزمة التصميم
+
+قبل كتابة الواجهة، يقرأ الـ AI الوحدات التالية بالترتيب:
 
 1. Flutter Design Taste
 2. Mobile App UI/UX Pro Max
@@ -25,44 +37,19 @@
 4. Flutter Improve Design
 5. Flutter UI Design — thienqo
 
-هذه الوحدات المرفقة هي implementations أصلية محمولة لأدوار التصميم المذكورة، وليست ادعاءً بأنها ملفات رسمية لمؤلفين خارجيين. إذا كانت النسخ الرسمية مثبتة في بيئة AI، يمكن للـ AI قراءتها مع الوحدات المرفقة.
+هذه modules أصلية محمولة لأدوار التصميم المذكورة، وليست ادعاءً بأنها النسخ الرسمية لمؤلفين خارجيين. إذا كانت نسخ رسمية متاحة في بيئة AI، يمكن قراءتها مع الوحدات المرفقة.
 
-## الاستخدام مع أي AI
+## Use with any AI / الاستخدام مع أي AI
 
-- **Claude:** وجّه Claude إلى `adapters/claude/CLAUDE.md`.
-- **Gemini:** استخدم `adapters/gemini/GEMINI.md`.
-- **Codex:** استخدم `adapters/codex/AGENTS.md`.
-- **Cursor:** انسخ `adapters/cursor/.cursorrules` إلى جذر مشروعك.
-- **GitHub Copilot:** انسخ `adapters/copilot/copilot-instructions.md` إلى `.github/copilot-instructions.md`.
-- **أي AI آخر:** اطلب منه قراءة `SKILL.md` ثم كل الملفات داخل `skills/` قبل التنفيذ.
+- Claude: `adapters/claude/CLAUDE.md`
+- Gemini: `adapters/gemini/GEMINI.md`
+- Codex: `adapters/codex/AGENTS.md`
+- Cursor: `adapters/cursor/.cursorrules`
+- GitHub Copilot: `adapters/copilot/copilot-instructions.md`
+- Any other AI: read `SKILL.md`, then every file under `skills/`, before coding.
 
-## مثال طلب
+## Output / التسليم
 
-```text
-أريد تطبيق Flutter لمستخدمي LiveContainer يختبر توافق IPA، يحفظ الملفات محليًا، ويولد تقريرًا قابلًا للمشاركة. ابدأ بالـ MVP وانشره على GitHub وابنِ IPA عبر Actions.
-```
+The result includes a real Flutter or Swift project, design direction, reusable components, assets and icon, tests/checks, README and license, GitHub Actions, and a non-signed IPA artifact with SHA-256 after a successful macOS build. Use SideStore, AltStore, or a signing tool you own to install an unsigned IPA.
 
-## ما الذي يتم تسليمه؟
-
-- واجهة Mobile-first مع Design System.
-- حالات loading/empty/error/success/disabled.
-- Assets وأيقونة حقيقية.
-- مشروع Flutter أو Swift قابل للبناء.
-- README وLICENSE وGitHub Actions.
-- IPA غير موقّع وSHA-256 بعد نجاح macOS workflow.
-
-IPA الناتج غير موقّع عادةً؛ ثبّته عبر SideStore أو AltStore أو أداة توقيع تملكها.
-
-## المجلدات
-
-```text
-SKILL.md                         المهارة الرئيسية
-skills/                          وحدات التصميم الخمس
-adapters/                        تعليمات Claude/Gemini/Codex/Cursor/Copilot
-examples/                        أمثلة طلبات جاهزة
-templates/                       قوالب Design Direction
-```
-
-## المساهمة
-
-اقترح تحسينًا أو أضف module جديدة مع الحفاظ على: تصميم قابل للاستخدام، عدم تسريب الأسرار، بناء قابل للتكرار، وعدم الادعاء باستخدام مهارة غير موجودة.
+الملفات الرئيسية هي `SKILL.md` و`skills/` و`adapters/` و`examples/` و`templates/`.
