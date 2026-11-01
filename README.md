@@ -1,6 +1,6 @@
 # AppKiln — Mobile Build Skill
 
-> صفحة تعريف ثنائية اللغة مع زر تبديل مستقل: [افتح AppKiln بالعربية والإنجليزية](https://te3i.github.io/appkiln/)
+> صفحة تعريف ثنائية اللغة مع زر تبديل مستقل: [افتح ملف AppKiln التعريفي](https://github.com/te3i/appkiln/blob/main/docs/index.html)
 
 [![Skill validation](https://img.shields.io/badge/skill-validated-22c55e)](SKILL.md)
 [![Flutter](https://img.shields.io/badge/Flutter-supported-02569B?logo=flutter)](SKILL.md)
