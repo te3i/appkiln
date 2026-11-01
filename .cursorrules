@@ -1,1 +1,1 @@
-Read SKILL.md and every module under skills/ before implementation. Use the five-module design stack, build real mobile UI states, keep Flutter/Swift builds reproducible, and verify a successful macOS GitHub Actions IPA before claiming completion.
+Read SKILL.md and every module under skills/ before implementation. Use the five-module design stack, build real mobile UI states, keep Flutter/Swift builds reproducible, and verify the requested APK or IPA through the appropriate GitHub Actions workflow before claiming completion.

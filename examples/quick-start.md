@@ -1,21 +1,23 @@
 # Generic Examples
 These are request-format examples only. The skill does not contain a default app idea.
-## Health app
+## Flutter Android app
 ```text
-Build an English Flutter app for tracking water intake, with local reminders, weekly charts, and a dark mode. Give it a modern interface, publish the project to GitHub, and build an IPA through Actions.
+Build an English Flutter app for tracking water intake, with local reminders, weekly charts, and a dark mode. Use the complete five-module design stack, publish the project to GitHub, and deliver a verified APK.
 ```
-## Finance app
+## Swift iOS app
 ```text
-Build a Swift iOS app for tracking freelance invoices. Include clients, invoice status, local persistence, PDF export, and a polished accessible UI. Publish it to GitHub and build an IPA with Actions.
+Build a Swift iOS app for tracking freelance invoices. Include clients, invoice status, local persistence, PDF export, and a polished accessible UI. Publish it to GitHub and deliver a verified IPA through Actions.
 ```
-## Photo utility
+## Flutter photo utility
 ```text
-Build a Flutter app that batch-compresses photos, shows before-and-after sizes, and exports the results. Use the full design stack and deliver a verified IPA.
+Build a Flutter app that batch-compresses photos, shows before-and-after sizes, and exports the results. Automatically choose the strongest visual direction from the five design modules, publish the project to GitHub, and deliver a verified APK.
 ```
 ## Expected behavior
 1. Ask whether to use Flutter or Swift only when the technology is unspecified.
-2. Read the five-module design stack and create `DESIGN_DIRECTION.md`.
-3. Implement the user's idea without replacing it with a preset example.
-4. Build an MVP with error, loading, and empty states.
-5. Create GitHub Actions and fix build failures.
-6. Deliver the GitHub URL, Actions URL, IPA, and SHA-256.
+2. Infer the product structure, visual direction, and MVP scope from the user's idea.
+3. Read and connect all five design modules before building the interface.
+4. Create `DESIGN_DIRECTION.md`, a centralized design system, reusable components, and complete screen states.
+5. Implement the user's idea without replacing it with a preset example.
+6. Run formatting, analysis, tests, UI checks, and the relevant platform build.
+7. Publish the complete project and GitHub Actions workflow.
+8. Deliver a verified APK or IPA, its URL, size, SHA-256 checksum, and installation instructions.

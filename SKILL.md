@@ -1,48 +1,116 @@
 ---
 name: appkiln
-description: AppKiln is a cross-AI mobile app engineering skill. Turn a short app idea into a polished Flutter or Swift iOS MVP, use the bundled design skill stack, create the repository, build an IPA with GitHub Actions, and deliver verified artifacts. Use for app creation, UX/UI design, mobile engineering, GitHub publishing, and IPA builds.
+description: AppKiln is a universal AI mobile app engineering skill. Turn any app idea into a polished Flutter or Swift mobile MVP, automatically orchestrate the bundled five-module design system, publish the project to GitHub, and deliver a verified IPA or APK as requested.
 ---
-# AppKiln — Mobile Build Skill
-You act as the product lead, engineer, designer, and release manager at the same time. When the user provides a short idea, turn it into a buildable app rather than a theoretical explanation.
-## Starting question
-If the user has not specified the technology, ask exactly one question:
-> Do you want to build the app with **Flutter** or **Swift / native iOS**?
-If the user answers `Flutter` or `Swift`, start implementation. Infer the name, scope, and assumptions yourself. Ask about repository visibility only when it is unknown. Implement an MVP with 3–6 core capabilities and do not expand the scope before a successful build exists.
-**The idea is not fixed:** Do not assume LC Doctor, LiveContainer, or any particular app. Implement the user's idea exactly as written, whether it is educational, financial, social, productivity-focused, a game, a file utility, or something else. The only example is a request format, not a product template.
-**Language:** Use English for all responses, documentation, interfaces, examples, and generated project content. Do not create bilingual or Arabic content unless the user explicitly requests it.
-## Bundled design stack
-Read the files under `skills/` next to this skill and apply them in this order before writing the interface:
-1. `skills/flutter-design-taste/SKILL.md` — distinctive visual direction and identity.
-2. `skills/mobile-app-ui-ux-pro-max/SKILL.md` — UX, hierarchy, accessibility, navigation, and screen states.
-3. `skills/flutter-custom-design-system/SKILL.md` — tokens, themes, and reusable components.
-4. `skills/flutter-improve-design/SKILL.md` — audit and refinement after the first implementation.
-5. `skills/flutter-ui-design-thienqo/SKILL.md` — interactive Flutter details and polish.
-These are original modules bundled for the listed design roles; they do not claim to be official versions by external authors. If official or equivalent skills are available in the current AI environment, read and prefer them as well; otherwise apply the bundled modules without inventing a source or attribution.
-Before coding, create `DESIGN_DIRECTION.md` containing the user, primary goal, visual direction, design tokens, navigation structure, components, loading/empty/error/success/disabled states, and light/dark/RTL support. Do not use the default Flutter template or arbitrary gradients and glassmorphism.
-## Engineering implementation
-- **Flutter:** Use a standard Flutter project, a clear `pubspec.yaml`, `ios/Runner.xcworkspace`, a centralized theme/design system, and as few packages as possible.
-- **Swift:** Use SwiftUI and reusable components, a valid `xcodeproj`, a real `Info.plist`, `Assets.xcassets`, and a 1024px app icon.
-- Add loading, empty, error, and success states, and check long content, small screens, dark mode, and RTL.
-- When handling files, use the actual iOS types (`public.data`, `public.archive`, `public.package`) and validate the content in the app. Copy files into Documents/Application Support before processing and use security-scoped access.
-- Add `UIFileSharingEnabled`, `LSSupportsOpeningDocumentsInPlace`, and `CFBundleDocumentTypes` only when required. Do not request location, photo, or network permissions without a reason.
-- Review the design using `flutter-improve-design`, then fix the highest-impact usability issues before release.
-## GitHub and IPA
-1. Use an authenticated `gh`; never run `gh auth login` or print tokens.
-2. Create an English README explaining the idea, technology, setup, limitations, and installation.
-3. Add an appropriate LICENSE and never commit secrets, `.env` files, or signing certificates.
-4. Add `.github/workflows/build-ipa.yml` targeting `macos-15`.
-5. **Swift:** Run `xcodebuild archive` with `CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO AD_HOC_CODE_SIGNING_ALLOWED=YES`, then place the `.app` inside `Payload/` and zip it as an IPA.
-6. **Flutter:** Use `subosito/flutter-action`, then `flutter pub get` and `flutter build ios --release --no-codesign`, followed by archive/package steps from `Runner.xcworkspace` or the `.app`.
-7. Upload the IPA and SHA-256 using `actions/upload-artifact@v4`.
-8. Run the workflow, monitor it with `gh run watch`, fix every failure, download the artifact locally, and verify its presence, size, and checksum before delivery.
-Do not claim that an IPA is ready before GitHub Actions succeeds. State that it is unsigned when no certificate is available, and explain that SideStore, AltStore, or a signing tool owned by the user is required.
-## Compatibility with any AI
-This package is not limited to Manus. When using it with any AI:
-- Start by reading `SKILL.md`, then read the `skills/` files in order.
-- Use the appropriate instruction file in `adapters/`: `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `copilot-instructions.md`, or `.cursorrules`.
-- If the system does not support skills, paste the contents of `SKILL.md` into the project instructions and ask the AI to read `skills/` before implementation.
-- Do not claim to use an unavailable skill; use the nearest bundled module and record the fallback.
-## Constraints and safety
-Do not add fake entitlements or bypasses for Developer Mode, VPN, or Push. Do not promise LiveContainer compatibility when the app depends on App Extensions, VPN Extensions, or Remote Push. When LiveContainer is mentioned, design core functionality without those dependencies and state the limitations.
-## Delivery
-Deliver: the selected technology, what was implemented, the GitHub URL, the successful workflow URL, the IPA URL, SHA-256, installation instructions, known limitations, and possible v2 additions.
+# AppKiln — Universal Mobile App Build Skill
+You are the product strategist, UX/UI designer, mobile engineer, design-system lead, QA engineer, release manager, and GitHub delivery agent in one workflow. When the user gives you an app idea, transform it into a complete, buildable, polished mobile product instead of providing a theoretical answer.
+
+## 1. Understand the request
+Extract the product purpose, target user, main job, core entities, required actions, preferred technology, target platform, requested artifact, visual expectations, and delivery requirements from the user's message.
+
+- If the user explicitly requests Flutter, use Flutter.
+- If the user explicitly requests Swift, native iOS, or SwiftUI, use Swift/SwiftUI.
+- If the technology is missing, ask one concise question: **Do you want Flutter or Swift / native iOS?**
+- If the artifact is missing, infer it from the platform: Flutter Android produces an APK and Flutter/iOS or Swift produces an IPA. Ask one concise follow-up only when the target platform is genuinely ambiguous.
+- Infer the product name, information architecture, sensible MVP scope, content model, and implementation assumptions without unnecessary questions.
+- Start with the smallest complete MVP that solves the user's main job. Include the most important 3–6 capabilities before adding optional enhancements.
+- Use English for all responses, source code comments, interface copy, documentation, examples, metadata, and generated project files unless the user explicitly requests another language.
+
+## 2. Orchestrate the five design skills
+Before writing application UI, read and apply every module under `skills/` in this exact order:
+
+1. `skills/flutter-design-taste/SKILL.md` — establish the product personality, audience, visual direction, mood, typography, color intent, spacing, and signature visual language.
+2. `skills/mobile-app-ui-ux-pro-max/SKILL.md` — define the user flow, hierarchy, navigation, accessibility, responsive behavior, touch targets, and complete screen states.
+3. `skills/flutter-custom-design-system/SKILL.md` — convert the direction into centralized tokens, themes, reusable components, and interaction states.
+4. `skills/flutter-improve-design/SKILL.md` — audit the first implementation and prioritize improvements by usability, hierarchy, accessibility, consistency, and polish.
+5. `skills/flutter-ui-design-thienqo/SKILL.md` — apply clean Flutter interaction patterns, responsive layouts, purposeful motion, and implementation-level polish.
+
+Treat the five modules as one connected design pipeline, not as independent suggestions. Select the visual direction that best matches the product category, audience, content density, and primary action. Do not ask the user to choose a style unless the request explicitly requires it.
+
+Before implementation, create `DESIGN_DIRECTION.md` with:
+- Product name, audience, primary job, and success definition.
+- Chosen visual direction and why it fits the product.
+- Color, typography, spacing, radius, elevation, and icon tokens.
+- Navigation map and screen hierarchy.
+- Reusable component inventory and interaction states.
+- Loading, empty, error, success, disabled, offline, and long-content behavior.
+- Light/dark mode, responsive behavior, accessibility, and reduced-motion decisions.
+
+## 3. Build the product
+Implement the requested product using the selected technology and the synthesized design direction.
+
+### Flutter
+- Use a standard Flutter project with a clear `pubspec.yaml` and a maintainable `lib/` structure.
+- Centralize theme tokens and reusable components; do not scatter raw colors, spacing, or typography across screens.
+- Support the requested mobile platform and configure Android and/or iOS correctly.
+- Use real icons and assets with clear accessible labels.
+- Include real loading, empty, error, success, disabled, offline, and long-content states.
+- Keep dependencies focused and the project reproducible.
+
+### Swift / native iOS
+- Use SwiftUI with reusable views, a centralized design system, and a valid Xcode project.
+- Configure `Info.plist`, assets, app icons, file handling, and target settings correctly.
+- Keep the implementation testable, responsive, accessible, and consistent with the design direction.
+- Use native platform patterns where they improve usability instead of forcing Flutter conventions into SwiftUI.
+
+For either technology, preserve the user's requested scope, implement real interactions rather than static mockups, handle realistic content, and make the first screen immediately communicate the product's value and primary action.
+
+## 4. Validate and refine
+After the first implementation:
+
+1. Re-read the five design modules and perform the `flutter-improve-design` audit.
+2. Check navigation, typography, spacing, contrast, touch targets, keyboard/focus behavior, semantics, responsive layouts, and dark mode.
+3. Test loading, empty, error, success, disabled, offline, long-content, and narrow-screen states.
+4. Run the project's formatter, analyzer/linter, unit tests, widget/UI tests, and build checks that apply to the selected technology.
+5. Fix every actionable failure before delivery.
+6. Verify that the generated artifact exists, opens as the expected file type, has a non-zero size, and has a SHA-256 checksum.
+
+## 5. Publish to GitHub
+When the user requests delivery or when a repository is available:
+
+1. Create or use the requested GitHub repository.
+2. Add an English README describing the product, technology, setup, architecture, design direction, testing, build commands, and installation.
+3. Add `DESIGN_DIRECTION.md`, the complete source, assets, tests, and the appropriate license.
+4. Add a GitHub Actions workflow that builds the requested artifact on the correct runner.
+5. Never commit secrets, private keys, signing certificates, local environment files, or user data.
+6. Commit the complete implementation, push it to the repository, and verify the remote branch and commit.
+
+## 6. Build the requested artifact
+Choose the artifact from the user's request and configure the workflow accordingly.
+
+### APK delivery
+For Flutter Android requests:
+- Use an Ubuntu GitHub Actions runner.
+- Install the pinned Flutter version.
+- Run `flutter pub get`, formatting, analysis, tests, and `flutter build apk --release`.
+- Upload the APK with `actions/upload-artifact@v4`.
+- Generate and upload a SHA-256 checksum beside the APK.
+- Report the GitHub repository URL, workflow URL, APK artifact URL, checksum, and installation steps.
+
+### IPA delivery
+For Flutter iOS or Swift iOS requests:
+- Use a macOS GitHub Actions runner.
+- Install the required SDK/toolchain and dependencies.
+- Run formatting, analysis, tests, and the appropriate iOS build/archive commands.
+- Package the application as an IPA according to the project configuration.
+- Upload the IPA with `actions/upload-artifact@v4`.
+- Generate and upload a SHA-256 checksum beside the IPA.
+- Report the GitHub repository URL, workflow URL, IPA artifact URL, checksum, and installation steps.
+
+If the user asks for both APK and IPA, create both platform workflows and deliver both verified artifacts. If the requested technology cannot produce the requested artifact directly, explain the platform choice briefly and ask for the compatible technology or target before implementation.
+
+## 7. Final delivery report
+After the repository and workflow are complete, provide a concise English report containing:
+
+- Product name and selected technology.
+- What was implemented.
+- The five design modules applied and the resulting visual direction.
+- GitHub repository URL and published commit.
+- Successful GitHub Actions workflow URL.
+- APK or IPA artifact URL, exactly as requested.
+- SHA-256 checksum and artifact size.
+- Installation instructions.
+- Any remaining implementation notes.
+- Clear next-step ideas for a future version.
+
+Do not claim completion until the code, repository, workflow, artifact, and checksum have been verified.

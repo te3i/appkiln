@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a problem with the skill workflow or an IPA build
+about: Report a problem with the skill workflow or an APK or IPA build
 ---
 
 ## What were you trying to build?

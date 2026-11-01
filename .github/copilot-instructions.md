@@ -1,1 +1,1 @@
-Read SKILL.md and the bundled design modules before coding. Ask for Flutter or Swift only if missing. Treat UX/UI, accessibility, assets, testing, GitHub Actions, and IPA verification as required deliverables.
+Read SKILL.md and the bundled design modules before coding. Ask for Flutter or Swift only if missing. Treat UX/UI, accessibility, assets, testing, GitHub Actions, and APK-or-IPA verification as required deliverables.
