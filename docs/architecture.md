@@ -1,6 +1,6 @@
 # AppKiln Architecture
 
-![AppKiln repository architecture](assets/architecture.svg)
+![AppKiln repository architecture](assets/architecture.png)
 
 AppKiln is organized around one orchestration skill and five specialized design modules. The root [`SKILL.md`](../SKILL.md) is the execution contract: it understands the request, coordinates the design pipeline, selects the platform, and manages validation and delivery.
 
@@ -10,7 +10,7 @@ AppKiln is organized around one orchestration skill and five specialized design 
 |---|---|---|---|
 | Orchestrator | [`SKILL.md`](../SKILL.md) | Understand the request, coordinate every stage, and manage delivery | Complete build plan and verified release |
 | Design pipeline | [`skills/`](../skills/) | Define visual direction, UX, design system, audit, and interaction polish | `DESIGN_DIRECTION.md` and reusable UI |
-| AI adapters | [`adapters/`](../adapters/) | Give Claude, Gemini, Codex, Cursor, and Copilot the same repository contract | Consistent AI execution |
+| AI adapters | [`adapters/`](../adapters/) | Give Claude, Gemini, Codex, Cursor, Copilot, OpenCode, and any other AI the same repository contract | Consistent AI execution |
 | Documentation | [`docs/`](.) and [`README.md`](../README.md) | Explain the workflow to people and AI systems | Discoverable repository |
 | Delivery layer | GitHub Actions created for each app | Build the requested mobile artifact and checksum | APK or IPA plus SHA-256 |
 

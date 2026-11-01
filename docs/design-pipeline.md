@@ -1,6 +1,6 @@
 # AppKiln Design Pipeline
 
-![Five-skill design pipeline](assets/skill-pipeline.svg)
+![Five-skill design pipeline](assets/skill-pipeline.png)
 
 The five modules are a deliberate sequence. Each module has one primary responsibility, a clear boundary, and a concrete handoff.
 

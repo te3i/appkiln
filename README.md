@@ -1,6 +1,6 @@
 # AppKiln — Universal Mobile Build Skill
 
-![AppKiln Universal Mobile Build Skill](docs/assets/appkiln-banner.svg)
+![AppKiln Universal Mobile Build Skill](docs/assets/appkiln-banner.png)
 
 AppKiln turns an app idea into a polished Flutter or Swift mobile MVP. It connects five specialized design skills, selects the strongest product direction automatically, builds the app, publishes it to GitHub, and delivers a verified APK or IPA through GitHub Actions.
 
@@ -21,7 +21,7 @@ The idea is not a fixed template. Use AppKiln for educational, social, financial
 
 ## How the pipeline works
 
-![AppKiln five-skill design pipeline](docs/assets/skill-pipeline.svg)
+![AppKiln five-skill design pipeline](docs/assets/skill-pipeline.png)
 
 The five modules have explicit ownership and documented handoffs:
 
@@ -37,11 +37,11 @@ All handoffs are recorded in one shared [`DESIGN_DIRECTION.md`](templates/DESIGN
 
 ## Repository architecture
 
-![AppKiln repository architecture](docs/assets/architecture.svg)
+![AppKiln repository architecture](docs/assets/architecture.png)
 
 - [`SKILL.md`](SKILL.md) — the main orchestrator and complete execution contract.
 - [`skills/`](skills/) — the five connected design modules.
-- [`adapters/`](adapters/) — instructions for Claude, Gemini, Codex, Cursor, and GitHub Copilot.
+- [`adapters/`](adapters/) — instructions for Claude, Gemini, Codex, Cursor, GitHub Copilot, OpenCode, and any other AI.
 - [`templates/`](templates/) — the shared design-direction template.
 - [`examples/`](examples/) — precise request examples.
 - [`docs/`](docs/) — architecture, pipeline, and delivery documentation.
@@ -68,8 +68,10 @@ Every delivery includes the GitHub repository, successful Actions workflow, arti
 - Codex: [`adapters/codex/AGENTS.md`](adapters/codex/AGENTS.md)
 - Cursor: [`adapters/cursor/.cursorrules`](adapters/cursor/.cursorrules)
 - GitHub Copilot: [`adapters/copilot/copilot-instructions.md`](adapters/copilot/copilot-instructions.md)
+- OpenCode: [`adapters/opencode/AGENTS.md`](adapters/opencode/AGENTS.md)
+- Any other model or coding agent: [`adapters/GENERIC.md`](adapters/GENERIC.md)
 
-Any other AI should read [`SKILL.md`](SKILL.md), then every file under [`skills/`](skills/), before coding.
+Every adapter follows the same root contract and five-module design pipeline.
 
 ## Contributing
 

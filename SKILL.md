@@ -127,6 +127,18 @@ A later module may refine an earlier decision only when it improves usability or
 
 Treat the five modules as one connected pipeline with explicit ownership, not as independent suggestions. Select the visual direction that best matches the product category, audience, content density, and primary action. Do not ask the user to choose a style unless the request explicitly requires it.
 
+## AI compatibility and adapters
+AppKiln is model-agnostic. It works with Claude, Gemini, Codex, Cursor, GitHub Copilot, OpenCode, and any other AI model or coding agent that can read project files and edit a repository.
+
+- Dedicated adapters live under `adapters/` and provide the shortest compatible instruction set.
+- OpenCode should use [`adapters/opencode/AGENTS.md`](adapters/opencode/AGENTS.md).
+- Any other model or agent should use [`adapters/GENERIC.md`](adapters/GENERIC.md), then follow this root skill and every file under `skills/`.
+- The root `AGENTS.md` remains the general repository entry point for agents that automatically discover it.
+- Adapters may restate the workflow for a tool, but they must not weaken the five-module order, handoff contract, validation requirements, or delivery report.
+- The repository is the source of truth. The same files and contracts must produce the same design and delivery behavior regardless of the AI model.
+
+When a model cannot perform a required action, it must continue with the available steps, clearly identify the missing action, and never claim that action was completed.
+
 ## 3. Build the product
 Implement the requested product using the selected technology and the synthesized design direction.
 
