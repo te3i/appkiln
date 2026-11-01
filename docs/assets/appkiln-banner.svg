@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" role="img" aria-labelledby="title desc">
+  <title id="title">AppKiln Universal Mobile Build Skill</title>
+  <desc id="desc">A dark green AppKiln banner showing the journey from app idea to verified APK or IPA.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080b10"/><stop offset="1" stop-color="#18251c"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b7f36b" stop-opacity=".95"/><stop offset="1" stop-color="#7ee787" stop-opacity=".7"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="42"/></filter>
+  </defs>
+  <rect width="1600" height="620" rx="32" fill="url(#bg)"/>
+  <circle cx="1330" cy="-30" r="300" fill="#b7f36b" opacity=".13" filter="url(#blur)"/>
+  <circle cx="130" cy="650" r="260" fill="#7ee787" opacity=".08" filter="url(#blur)"/>
+  <path d="M78 470 C330 380 430 520 650 420 S1010 270 1515 345" fill="none" stroke="#b7f36b" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M78 470 C330 380 430 520 650 420 S1010 270 1515 345" fill="none" stroke="url(#glow)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 24"/>
+  <g transform="translate(92 84)">
+    <rect width="74" height="74" rx="22" fill="#b7f36b"/>
+    <path d="M22 52 37 22l15 30-15-9z" fill="#11170c"/>
+    <text x="100" y="34" fill="#f6f7fb" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="800">APPKILN</text>
+    <text x="100" y="67" fill="#aab3c5" font-family="Inter,Arial,sans-serif" font-size="18">Universal mobile app build skill</text>
+  </g>
+  <text x="92" y="270" fill="#f6f7fb" font-family="Inter,Arial,sans-serif" font-size="72" font-weight="800" letter-spacing="-3">Idea → Design → Build → Ship</text>
+  <text x="96" y="330" fill="#aab3c5" font-family="Inter,Arial,sans-serif" font-size="25">Five connected design skills. One precise delivery workflow.</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">
+    <g transform="translate(130 418)"><circle r="15" fill="#b7f36b"/><text x="32" y="7" fill="#f6f7fb">Visual direction</text></g>
+    <g transform="translate(450 418)"><circle r="15" fill="#b7f36b"/><text x="32" y="7" fill="#f6f7fb">UX architecture</text></g>
+    <g transform="translate(750 418)"><circle r="15" fill="#b7f36b"/><text x="32" y="7" fill="#f6f7fb">Design system</text></g>
+    <g transform="translate(1040 418)"><circle r="15" fill="#b7f36b"/><text x="32" y="7" fill="#f6f7fb">Audit + polish</text></g>
+  </g>
+  <text x="96" y="554" fill="#b7f36b" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="800">Flutter · Swift · Android APK · iOS IPA · GitHub Actions</text>
+</svg>

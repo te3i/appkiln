@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">AppKiln repository architecture</title>
+  <desc id="desc">A diagram showing the main skill coordinating design modules, adapters, documentation, and platform delivery.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b0d12"/><stop offset="1" stop-color="#18251c"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".32"/></filter></defs>
+  <rect width="1400" height="760" rx="28" fill="url(#bg)"/>
+  <text x="70" y="72" fill="#f6f7fb" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="800">AppKiln repository architecture</text>
+  <text x="70" y="110" fill="#aab3c5" font-family="Inter,Arial,sans-serif" font-size="20">The root skill coordinates the design modules, delivery adapters, and documentation.</text>
+  <g font-family="Inter,Arial,sans-serif" filter="url(#shadow)">
+    <g transform="translate(490 155)"><rect width="420" height="115" rx="20" fill="#b7f36b"/><text x="35" y="45" fill="#355226" font-size="17" font-weight="800">ORCHESTRATOR</text><text x="35" y="82" fill="#11170c" font-size="30" font-weight="800">SKILL.md</text></g>
+    <g transform="translate(90 355)"><rect width="330" height="170" rx="18" fill="#121722" stroke="#3a4b39"/><text x="28" y="43" fill="#b7f36b" font-size="16" font-weight="800">DESIGN PIPELINE</text><text x="28" y="78" fill="#f6f7fb" font-size="21" font-weight="700">skills/</text><text x="28" y="111" fill="#aab3c5" font-size="17">Five connected modules</text><text x="28" y="140" fill="#aab3c5" font-size="17">with explicit handoffs</text></g>
+    <g transform="translate(535 355)"><rect width="330" height="170" rx="18" fill="#121722" stroke="#3a4b39"/><text x="28" y="43" fill="#b7f36b" font-size="16" font-weight="800">AI ADAPTERS</text><text x="28" y="78" fill="#f6f7fb" font-size="21" font-weight="700">adapters/</text><text x="28" y="111" fill="#aab3c5" font-size="17">Claude · Gemini · Codex</text><text x="28" y="140" fill="#aab3c5" font-size="17">Cursor · Copilot</text></g>
+    <g transform="translate(980 355)"><rect width="330" height="170" rx="18" fill="#121722" stroke="#3a4b39"/><text x="28" y="43" fill="#b7f36b" font-size="16" font-weight="800">DELIVERY LAYER</text><text x="28" y="78" fill="#f6f7fb" font-size="21" font-weight="700">GitHub Actions</text><text x="28" y="111" fill="#aab3c5" font-size="17">APK · IPA · SHA-256</text><text x="28" y="140" fill="#aab3c5" font-size="17">Repository · Artifacts</text></g>
+    <g transform="translate(490 610)"><rect width="420" height="82" rx="16" fill="#121722" stroke="#3a4b39"/><text x="34" y="35" fill="#b7f36b" font-size="16" font-weight="800">SHARED CONTRACT</text><text x="34" y="62" fill="#f6f7fb" font-size="19" font-weight="700">DESIGN_DIRECTION.md</text></g>
+  </g>
+  <g stroke="#b7f36b" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="8 12"><path d="M700 270v65"/><path d="M490 235 255 345"/><path d="M700 270v65"/><path d="M910 235 1145 345"/><path d="M700 525v82"/></g>
+</svg>
