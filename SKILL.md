@@ -17,24 +17,115 @@ Extract the product purpose, target user, main job, core entities, required acti
 - Use English for all responses, source code comments, interface copy, documentation, examples, metadata, and generated project files unless the user explicitly requests another language.
 
 ## 2. Orchestrate the five design skills
-Before writing application UI, read and apply every module under `skills/` in this exact order:
+The five modules form a balanced design system with separate responsibilities. Read and apply every module in this exact order. Do not let one module silently replace another module's role.
 
-1. `skills/flutter-design-taste/SKILL.md` — establish the product personality, audience, visual direction, mood, typography, color intent, spacing, and signature visual language.
-2. `skills/mobile-app-ui-ux-pro-max/SKILL.md` — define the user flow, hierarchy, navigation, accessibility, responsive behavior, touch targets, and complete screen states.
-3. `skills/flutter-custom-design-system/SKILL.md` — convert the direction into centralized tokens, themes, reusable components, and interaction states.
-4. `skills/flutter-improve-design/SKILL.md` — audit the first implementation and prioritize improvements by usability, hierarchy, accessibility, consistency, and polish.
-5. `skills/flutter-ui-design-thienqo/SKILL.md` — apply clean Flutter interaction patterns, responsive layouts, purposeful motion, and implementation-level polish.
+### 2.1 Visual strategy — `flutter-design-taste`
+This module owns the product's visual identity before implementation.
 
-Treat the five modules as one connected design pipeline, not as independent suggestions. Select the visual direction that best matches the product category, audience, content density, and primary action. Do not ask the user to choose a style unless the request explicitly requires it.
+It must decide:
+- Product personality, audience, usage context, and emotional tone.
+- One coherent visual direction and a short mood board.
+- Color philosophy: primary, supporting, surface, text, muted, success, warning, and error roles.
+- Display/body typography relationship and hierarchy.
+- Spacing rhythm, corner-radius language, elevation, icon style, and visual signatures.
+- What to avoid so the result does not become a generic template.
 
-Before implementation, create `DESIGN_DIRECTION.md` with:
-- Product name, audience, primary job, and success definition.
-- Chosen visual direction and why it fits the product.
-- Color, typography, spacing, radius, elevation, and icon tokens.
-- Navigation map and screen hierarchy.
-- Reusable component inventory and interaction states.
-- Loading, empty, error, success, disabled, offline, and long-content behavior.
-- Light/dark mode, responsive behavior, accessibility, and reduced-motion decisions.
+It must not design individual screens, invent button APIs, or scatter implementation values through the app.
+
+**Handoff:** produce the `Visual Direction` section of `DESIGN_DIRECTION.md`. Every later module must preserve this identity unless a usability issue requires a documented adjustment.
+
+### 2.2 Experience architecture — `mobile-app-ui-ux-pro-max`
+This module owns how the user completes the primary job.
+
+It must decide:
+- Primary user, primary job, success moment, and end-to-end user flow.
+- Information architecture, navigation model, screen order, and screen hierarchy.
+- The focal point, supporting content, primary action, secondary actions, and feedback area for every screen.
+- Form behavior, validation, touch targets, accessibility labels, focus order, and responsive behavior.
+- Loading, empty, error, success, disabled, offline, long-content, and narrow-screen states.
+- Light/dark behavior and reduced-motion expectations at the experience level.
+
+It must not redefine the visual identity or replace the design tokens from the first module.
+
+**Handoff:** produce the `Experience Architecture` and `Screen Specifications` sections of `DESIGN_DIRECTION.md`, including a screen-by-screen component and state inventory.
+
+### 2.3 Design-system engineering — `flutter-custom-design-system`
+This module owns the reusable visual and interaction primitives used by every screen.
+
+It must decide and implement:
+- Centralized `AppColors`, `AppTypography`, `AppSpacing`, `AppRadii`, and `AppShadows` or their equivalent for the selected technology.
+- Light and dark themes derived from the approved visual direction.
+- Reusable buttons, cards, text fields, navigation elements, dialogs, feedback, loading, empty, and error components.
+- Button and component behavior for default, hover, pressed, focused, disabled, loading, success, and error states.
+- Token usage rules so screens never introduce arbitrary colors, font sizes, spacing, or radii.
+- RTL, localization-readiness, contrast, and longest-content behavior.
+
+It must not create one-off components for a single screen when a reusable primitive is appropriate.
+
+**Handoff:** produce the `Design Tokens`, `Component Contract`, and `State Contract` sections of `DESIGN_DIRECTION.md`, then implement those contracts as the shared design system before screen-specific UI.
+
+### 2.4 Quality audit — `flutter-improve-design`
+This module owns the critical review after the first usable implementation exists.
+
+It must inspect the actual implementation and rank fixes in this order:
+1. Usability and task completion.
+2. Information hierarchy and clarity.
+3. Accessibility, contrast, semantics, and touch targets.
+4. Consistency with the approved tokens and component contracts.
+5. Visual polish, motion, spacing, and finish.
+
+It must check every important state, the first-run flow, realistic content, long text, small screens, light mode, dark mode, and reduced motion. It should fix the largest issues rather than redesigning the product without evidence.
+
+**Handoff:** record the audit findings and completed fixes in the `Design Audit` section of `DESIGN_DIRECTION.md`. Do not pass unresolved high-impact issues to the final stage.
+
+### 2.5 Flutter interaction polish — `flutter-ui-design-thienqo`
+This module owns implementation-level interaction quality after the design system and audit are established.
+
+It must refine:
+- Clean Flutter or platform-equivalent component structure.
+- Flexible layouts, safe areas, scrolling, keyboard handling, and responsive constraints.
+- Short purposeful transitions using opacity and transform where appropriate.
+- Visible tap, press, loading, success, and navigation feedback.
+- Reduced-motion behavior through `MediaQuery.disableAnimations` or the selected platform equivalent.
+- Icon-only labels, gesture discoverability, and reliable behavior on narrow screens.
+
+It must not introduce a new visual language, replace approved tokens, or add animation merely for decoration.
+
+**Handoff:** produce the `Interaction Polish` section of `DESIGN_DIRECTION.md` and apply the final implementation refinements without changing the approved product direction.
+
+### Shared design contract and precedence
+Before coding, create one `DESIGN_DIRECTION.md` containing these sections:
+1. Product brief and success definition.
+2. Visual Direction.
+3. Experience Architecture.
+4. Screen Specifications.
+5. Design Tokens.
+6. Component Contract.
+7. State Contract.
+8. Design Audit.
+9. Interaction Polish.
+10. Accessibility, responsive, light/dark, RTL, and reduced-motion decisions.
+
+When modules disagree, resolve decisions in this order:
+1. Explicit user requirements.
+2. Product goal and successful task completion.
+3. Experience architecture and accessibility.
+4. Approved visual direction.
+5. Shared design-system tokens and reusable components.
+6. Implementation-level polish and motion.
+
+A later module may refine an earlier decision only when it improves usability or implementation quality, and it must preserve the original intent and update the shared contract. Never add arbitrary colors, buttons, typography, spacing, components, or animations outside the contract.
+
+### Required execution sequence
+1. Read all five modules before making UI decisions.
+2. Complete the visual strategy and experience architecture.
+3. Convert both into the shared tokens, components, and state contracts.
+4. Implement screens only from those contracts.
+5. Run the quality audit against the real implementation.
+6. Apply interaction polish and resolve the audit findings.
+7. Re-check every screen against the five-module contract before building the artifact.
+
+Treat the five modules as one connected pipeline with explicit ownership, not as independent suggestions. Select the visual direction that best matches the product category, audience, content density, and primary action. Do not ask the user to choose a style unless the request explicitly requires it.
 
 ## 3. Build the product
 Implement the requested product using the selected technology and the synthesized design direction.

@@ -18,7 +18,7 @@ Before writing the interface, the AI reads and connects these modules in order:
 3. Flutter Custom Design System
 4. Flutter Improve Design
 5. Flutter UI Design — thienqo
-The result is a complete `DESIGN_DIRECTION.md`, a coherent design system, reusable components, accessible states, responsive screens, and an implementation refined through a design audit.
+The modules have explicit ownership: visual strategy, experience architecture, design-system engineering, quality audit, and interaction polish. Each module hands a documented contract to the next one through `DESIGN_DIRECTION.md`, producing a coherent design system, reusable components, accessible states, responsive screens, and an implementation refined through a real design audit.
 ## Platform delivery
 - **Flutter + Android:** builds and uploads a verified APK.
 - **Flutter + iOS:** builds and uploads a verified IPA.
