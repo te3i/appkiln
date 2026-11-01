@@ -1,92 +1,69 @@
 ---
 name: mobile-app-ipa-github-builder
-description: Build and publish mobile app ideas from a short natural-language brief. Use when the user wants an iOS Swift app or Flutter app created, uploaded to GitHub, and built as an IPA through GitHub Actions.
+description: Cross-AI mobile app engineering skill. Turn a short app idea into a polished Flutter or Swift iOS MVP, use the bundled design skill stack, create the repository, build an IPA with GitHub Actions, and deliver verified artifacts. Use for app creation, UX/UI design, mobile engineering, GitHub publishing, and IPA builds.
 ---
 
-# Mobile App → GitHub → IPA
+# Mobile App IPA GitHub Builder
 
-حوّل فكرة التطبيق المختصرة إلى مشروع قابل للبناء، ولا تتعامل معها كإجابة نظرية. ابدأ بسؤال واحد فقط إذا لم يحدد المستخدم التقنية:
+أنت قائد المنتج والمهندس والمصمم ومدير الإصدار في وقت واحد. عندما يعطي المستخدم فكرة قصيرة، حوّلها إلى تطبيق فعلي قابل للبناء، وليس شرحًا نظريًا.
+
+## سؤال البداية
+
+إذا لم يحدد المستخدم التقنية، اسأل سؤالًا واحدًا فقط:
 
 > تريد بناء التطبيق بـ **Flutter** أم **Swift / iOS native**؟
 
-اقبل إجابة مثل `Flutter` أو `Swift` أو `سوفت`. إذا حدد المستخدم التقنية مسبقًا، ابدأ التنفيذ مباشرة. لا تسأل عن تفاصيل يمكن استنتاجها؛ اختر اسمًا مناسبًا للتطبيق، وبنية MVP عملية، وواجهة مرتبة، ثم وثّق الافتراضات في README.
+إذا أجاب `Flutter` أو `Swift` أو `سوفت` ابدأ التنفيذ. استنتج الاسم والنطاق والافتراضات بنفسك. اسأل عن خصوصية المستودع فقط إذا لم تكن معروفة. نفّذ MVP من 3–6 وظائف أساسية، ولا توسّع النطاق قبل وجود بناء ناجح.
 
-**متطلب UX/UI إلزامي:** قبل كتابة الواجهة، استخدم حزمة مهارات التصميم التالية بالترتيب عندما تكون مثبتة في الجلسة. الهدف هو إنتاج واجهة مميزة وغير نمطية، وليس قالب Flutter افتراضيًا:
+## حزمة التصميم المرفقة
 
-1. **Flutter Design Taste** — اختيار الاتجاه البصري والهوية والـ art direction.
-2. **Mobile App UI/UX Pro Max** — تجربة الاستخدام، بنية الشاشات، سهولة الوصول، وتدفق التنقل.
-3. **Flutter Custom Design System** — تحويل الاتجاه إلى tokens ومكونات Flutter قابلة لإعادة الاستخدام.
-4. **Flutter Improve Design** — مراجعة وتحسين الواجهة بعد أول تنفيذ.
-5. **Flutter UI Design — thienqo** — تطبيق أنماط Flutter المتقدمة والتفاصيل التفاعلية.
+اقرأ ملفات `skills/` الموجودة بجانب هذه المهارة، وطبّقها بهذا الترتيب قبل كتابة الواجهة:
 
-إذا لم تكن إحدى المهارات الخمس متاحة، لا تتظاهر باستخدامها: استخدم `ui-ux-pro-max` المتاح كمرجع أساسي، وطبّق نفس الأدوار يدويًا، ثم أكمل التنفيذ.
+1. `skills/flutter-design-taste/SKILL.md` — اتجاه بصري وهوية غير نمطية.
+2. `skills/mobile-app-ui-ux-pro-max/SKILL.md` — UX، hierarchy، accessibility، navigation، وحالات الشاشة.
+3. `skills/flutter-custom-design-system/SKILL.md` — tokens وTheme ومكونات قابلة لإعادة الاستخدام.
+4. `skills/flutter-improve-design/SKILL.md` — audit وتحسين بعد أول تنفيذ.
+5. `skills/flutter-ui-design-thienqo/SKILL.md` — تفاصيل Flutter التفاعلية والـ polish.
 
-## سير العمل الإلزامي
+هذه modules أصلية ومحمولة داخل الحزمة، وليست ادعاءً بأنها النسخ الرسمية لمؤلفين خارجيين. إذا كانت نسخ رسمية أو Skills مطابقة متاحة في بيئة AI الحالية، اقرأها أيضًا وفضّلها؛ وإلا طبّق modules المرفقة دون اختلاق مصدر أو نسبة.
 
-1. **فهم الفكرة وتثبيت النطاق**
-   - حوّل الفكرة إلى MVP قابل للتشغيل، مع 3–6 وظائف أساسية فقط في الإصدار الأول.
-   - راجع قيود LiveContainer إذا ذكرها المستخدم: تجنب App Extensions وVPN Extensions وPush Notifications والصلاحيات الخاصة، إلا إذا طلبها صراحة.
-   - اختر iOS 17+ افتراضيًا للمشروع الجديد ما لم يطلب المستخدم إصدارًا أقدم.
-   - اسأل عن خصوصية مستودع GitHub فقط إذا لم تكن معروفة؛ لا تنشئ مستودعًا عامًا افتراضيًا عندما قد يحتوي المشروع على أسرار.
+أنشئ قبل البرمجة ملف `DESIGN_DIRECTION.md` يحتوي على المستخدم، الهدف الأساسي، اتجاه بصري، design tokens، بنية التنقل، المكونات، حالات loading/empty/error/success/disabled، ودعم Light/Dark/RTL. لا تستخدم قالب Flutter افتراضيًا أو gradients وglassmorphism عشوائيًا.
 
-2. **اختيار مسار التنفيذ**
-   - **Swift / iOS native:** أنشئ مشروع SwiftUI واضحًا مع `xcodeproj` أو استخدم مشروعًا قائمًا. أضف `Info.plist` حقيقيًا، Assets.xcassets وأيقونة، و`Document Types` عندما يكون التطبيق يتعامل مع Files.
-   - **Flutter:** أنشئ مشروع Flutter قياسيًا مع `pubspec.yaml` و`ios/Runner.xcworkspace`. لا تخلط SwiftUI بواجهة Flutter إلا لضرورة واضحة. استخدم حزمًا مستقرة ومحدودة، وحدث `Info.plist` و`CFBundleDocumentTypes` عند الحاجة.
-   - لا تستخدم خدمات مدفوعة أو أسرارًا داخل المستودع. ضع مفاتيح API في GitHub Secrets أو اجعل الميزة اختيارية.
+## التنفيذ الهندسي
 
-3. **تصميم UX/UI ثم التنفيذ**
-   - نفّذ مرحلة تصميم قصيرة قبل البرمجة: حدّد المستخدم الأساسي، أهم إجراء في الشاشة الأولى، بنية التنقل، حالات الشاشة، ونظام التصميم.
-   - استخدم طبقة **Flutter Custom Design System** أو أقرب بديل لتحديد design tokens: الألوان الدلالية، الخطوط، أحجام النص، المسافات، نصف قطر الحواف، الظلال، حالات المكونات، والتباين.
-   - صمّم Mobile-first مع دعم RTL عند الحاجة، ومناطق لمس مريحة، ونصوص واضحة، وDark Mode قابل للقراءة.
-   - أضف حالات loading وempty وerror وsuccess وdisabled، ورسائل خطأ قريبة من العنصر المتسبب بها.
-   - استخدم SF Symbols في Swift أو Material Icons المتناسقة في Flutter، ولا تستخدم Emoji كأيقونات واجهة.
-   - اجعل الحركة قصيرة وهادفة وتحترم Reduce Motion، وراجع الشاشة الأولى والانتقال والتنقل قبل كتابة منطق البيانات.
+- **Flutter:** استخدم مشروع Flutter قياسيًا، `pubspec.yaml` واضحًا، `ios/Runner.xcworkspace`، Theme/Design System مركزيًا، وأقل عدد ممكن من الحزم.
+- **Swift:** استخدم SwiftUI ومكونات قابلة لإعادة الاستخدام، `xcodeproj` صحيحًا، `Info.plist` حقيقيًا، Assets.xcassets وأيقونة 1024px.
+- أضف حالات التحميل والفراغ والخطأ والنجاح، وتحقق من المحتوى الطويل والشاشات الصغيرة وDark Mode وRTL.
+- عند التعامل مع Files، استخدم أنواع iOS الفعلية (`public.data`, `public.archive`, `public.package`) ثم تحقق من المحتوى داخل التطبيق. انسخ الملف إلى Documents/Application Support قبل المعالجة، واستخدم security-scoped access.
+- أضف `UIFileSharingEnabled` و`LSSupportsOpeningDocumentsInPlace` و`CFBundleDocumentTypes` عند الحاجة فقط. لا تطلب صلاحيات موقع/صور/شبكة بلا سبب.
+- راجع التصميم بعد التنفيذ وفق `flutter-improve-design`، ثم أصلح أكبر مشاكل usability قبل النشر.
 
-4. **جودة التطبيق قبل الرفع**
-   - ابنِ واجهة فعلية، لا شاشة placeholder فقط.
-   - أضف حالات التحميل والخطأ والفراغ، واسم الملف/البيانات بعد الاستيراد، وحفظًا محليًا عندما يتوقع المستخدم أن تبقى البيانات بعد إغلاق التطبيق.
-   - عند استيراد ملفات من Files: لا تعتمد على UTI مخصص غير مضمون. استخدم أنواع iOS الفعلية مثل `public.data` و`public.archive` و`public.package`، ثم تحقق من المحتوى داخل التطبيق. انسخ الملف إلى Documents/Application Support قبل معالجته، واستخدم security-scoped access.
-   - أضف `UIFileSharingEnabled` و`LSSupportsOpeningDocumentsInPlace` و`CFBundleDocumentTypes` فقط عندما يحتاج التطبيق ملفات المستخدم. لا تطلب صلاحيات موقع/صور/شبكة بلا حاجة.
-   - أضف أيقونة 1024px واسم عرض واضح، وتحقق من RTL إذا كانت الواجهة عربية.
+## GitHub وIPA
 
-5. **اختبارات محلية قبل GitHub**
-   - افحص صيغة Swift/Dart و`Info.plist` و`git diff --check`.
-   - شغّل اختبارات الوحدات إن وجدت.
-   - تحقق أن كل ملف مستخدم في المشروع مضاف فعلًا إلى target، وأن Assets وInfo.plist مربوطان بالبناء.
-   - لا تدّعِ أن IPA بُني قبل نجاح GitHub Actions على macOS.
+1. استخدم `gh` المصادق عليه؛ لا تستخدم `gh auth login` ولا تطبع الرموز.
+2. أنشئ README عربي/إنجليزي يشرح الفكرة، التقنية، التشغيل، القيود، وطريقة التثبيت.
+3. أضف LICENSE مناسبة ولا ترفع الأسرار أو `.env` أو شهادات التوقيع.
+4. أضف `.github/workflows/build-ipa.yml` على `macos-15`.
+5. **Swift:** نفّذ `xcodebuild archive` مع `CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO AD_HOC_CODE_SIGNING_ALLOWED=YES` ثم ضع `.app` داخل `Payload/` واضغط IPA.
+6. **Flutter:** استخدم `subosito/flutter-action`، ثم `flutter pub get` و`flutter build ios --release --no-codesign`، وبعدها archive/package من `Runner.xcworkspace` أو `.app`.
+7. ارفع IPA وSHA-256 عبر `actions/upload-artifact@v4`.
+8. شغّل workflow، راقب `gh run watch`، أصلح كل فشل، نزّل artifact محليًا، وتحقق من وجوده وحجمه وبصمته قبل التسليم.
 
-6. **إنشاء المستودع والرفع**
-   - استخدم GitHub CLI المصادق عليه عبر `gh`. لا تستخدم `gh auth login` ولا تطبع الرموز.
-   - أنشئ مستودعًا باسم واضح، أضف README وLICENSE مناسبة، ثم commit وpush إلى `main`.
-   - لا ترفع `.env` أو مفاتيح أو شهادات توقيع أو provisioning profiles سرية.
-   - اذكر في README أن IPA الناتج غير موقّع إذا كان البناء بدون شهادة، وأن المستخدم يحتاج SideStore/AltStore أو توقيعًا يملكه.
+لا تقل إن IPA جاهز قبل نجاح GitHub Actions. اذكر أنه غير موقّع إذا لم توجد شهادة، وأن SideStore/AltStore أو أداة توقيع يملكها المستخدم مطلوبة.
 
-7. **GitHub Actions وبناء IPA**
-   - أضف `.github/workflows/build-ipa.yml` أو `build.yml` يعمل على `macos-15`.
-   - **Swift:** استخدم `xcodebuild archive` مع `CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO AD_HOC_CODE_SIGNING_ALLOWED=YES`، ثم انسخ `.app` إلى `Payload/` واضغطه باسم `.ipa`.
-   - **Flutter:** استخدم `subosito/flutter-action`، ثم `flutter pub get` و`flutter build ios --release --no-codesign`، وبعدها archive/package بالطريقة نفسها من `Runner.xcworkspace` أو `.app` الناتج.
-   - ارفع IPA وملف SHA-256 كـ artifact باستخدام `actions/upload-artifact@v4`.
-   - شغّل workflow بعد push، راقب `gh run watch`, وأصلح أي فشل بدل تسليم رابط فاشل.
-   - بعد النجاح نزّل artifact إلى مسار محلي، تحقق من وجود IPA وحجمه وSHA-256، ثم سلّم رابط GitHub Actions ورابط الملف المحلي.
+## توافق أي AI
 
-## قواعد مهمة
+هذه الحزمة لا تعتمد على Manus فقط. عند استخدامها مع أي AI:
 
-- لا تقل إن التطبيق سيعمل داخل LiveContainer إذا كان يعتمد على صلاحيات أو Extensions لا تنتقل إلى Guest App. اذكر القيد بوضوح واقترح بديلًا.
-- لا تضف bypass أو entitlements مزيفة للحصول على صلاحيات iOS. Developer Mode وVPN وPush لا يمكن للتطبيق منحها لنفسه.
-- عند فشل اختيار ملف من Files داخل LiveContainer، افحص أولًا أنواع المستندات، ثم الحفظ في Documents، ثم اطلب من المستخدم تفعيل Fix File Picker في إعدادات Guest App فقط كحل احتياطي.
-- إذا كان المشروع يحتاج صورة أو أيقونة، أنشئ أصلًا محليًا مناسبًا وأضفه إلى Assets؛ لا تترك التطبيق بأيقونة افتراضية.
-- إذا كان المطلوب أكثر من 6 وظائف كبيرة، نفّذ MVP أولًا ثم أنشئ قائمة v2 بدل توسيع المشروع بلا اختبار.
+- ابدأ بقراءة `SKILL.md` ثم ملفات `skills/` بالترتيب.
+- استخدم ملف التعليمات المناسب في `adapters/`: `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `copilot-instructions.md`, أو `.cursorrules`.
+- إذا كان النظام لا يدعم Skills، الصق محتوى `SKILL.md` في تعليمات المشروع، ثم اطلب من AI قراءة `skills/` قبل التنفيذ.
+- لا تدّعِ استخدام Skill غير متاحة؛ استخدم أقرب module مرفق وسجّل fallback.
 
-## التسليم النهائي
+## القيود والسلامة
 
-اذكر باختصار:
+لا تضف entitlements مزيفة أو bypass للحصول على Developer Mode أو VPN أو Push. لا تعد بتوافق LiveContainer إذا كان التطبيق يعتمد على App Extensions أو VPN Extensions أو Remote Push. عند ذكر LiveContainer، صمّم الوظائف الأساسية بدون هذه الاعتمادات واذكر القيود.
 
-- التقنية المختارة.
-- ما تم تنفيذه فعليًا.
-- رابط المستودع.
-- رابط GitHub Actions الناجح.
-- رابط IPA artifact أو الملف المحلي.
-- طريقة التثبيت والتوقيع.
-- أي قيود معروفة.
+## التسليم
 
-لا تقل "تم الإطلاق" إذا لم ينجح البناء أو لم يتم رفع المستودع. إذا فشل البناء، اعرض الخطأ وأصلحه قبل التسليم.
+سلّم: التقنية المختارة، ما نُفذ، رابط GitHub، رابط workflow الناجح، رابط IPA، SHA-256، طريقة التثبيت، القيود المعروفة، وما يمكن إضافته في v2.

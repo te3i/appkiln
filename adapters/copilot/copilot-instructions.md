@@ -1,0 +1,1 @@
+Follow `/SKILL.md` as the master instruction. Before UI, load all bundled design modules. Prefer reusable components, semantic tokens, accessible states, RTL/Dark Mode where relevant, and real assets. Keep iOS/Flutter builds reproducible and never include signing secrets.
