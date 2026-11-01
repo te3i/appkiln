@@ -1,30 +1,21 @@
-# أمثلة عامة / Generic Examples
-
-هذه أمثلة لصيغة الطلب فقط. لا توجد فكرة تطبيق افتراضية داخل المهارة.
-
-## عربي — تطبيق صحة
-
+# Generic Examples
+These are request-format examples only. The skill does not contain a default app idea.
+## Health app
 ```text
-أريد تطبيق Flutter عربي لتسجيل شرب الماء، مع تذكيرات محلية ورسوم أسبوعية ووضع ليلي. صممه بواجهة حديثة، ارفع المشروع إلى GitHub وابنِ IPA عبر Actions.
+Build an English Flutter app for tracking water intake, with local reminders, weekly charts, and a dark mode. Give it a modern interface, publish the project to GitHub, and build an IPA through Actions.
 ```
-
-## English — Finance app
-
+## Finance app
 ```text
 Build a Swift iOS app for tracking freelance invoices. Include clients, invoice status, local persistence, PDF export, and a polished accessible UI. Publish it to GitHub and build an IPA with Actions.
 ```
-
-## عربي/English — Photo utility
-
+## Photo utility
 ```text
-أريد تطبيق Flutter يضغط الصور دفعة واحدة / Build a Flutter app that batch-compresses photos, shows before/after size, and exports the results. Use the full design stack and deliver a verified IPA.
+Build a Flutter app that batch-compresses photos, shows before-and-after sizes, and exports the results. Use the full design stack and deliver a verified IPA.
 ```
-
-## Expected behavior / السلوك المتوقع
-
-1. يسأل AI عن Flutter أو Swift فقط إذا لم تحدد التقنية.
-2. يقرأ حزمة التصميم الخمس وينشئ `DESIGN_DIRECTION.md`.
-3. ينفذ فكرة المستخدم نفسها، بدون استبدالها بمثال جاهز.
-4. يبني MVP مع حالات الخطأ والتحميل والفراغ.
-5. ينشئ GitHub Actions ويصلح فشل البناء.
-6. يسلم GitHub URL وActions URL وIPA وSHA-256.
+## Expected behavior
+1. Ask whether to use Flutter or Swift only when the technology is unspecified.
+2. Read the five-module design stack and create `DESIGN_DIRECTION.md`.
+3. Implement the user's idea without replacing it with a preset example.
+4. Build an MVP with error, loading, and empty states.
+5. Create GitHub Actions and fix build failures.
+6. Deliver the GitHub URL, Actions URL, IPA, and SHA-256.

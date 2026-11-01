@@ -1,10 +1,8 @@
 # Contributing
-
-اقتراحات التصميم والهندسة مرحب بها. عند إضافة module جديدة:
-
-1. أضف `SKILL.md` صغيرًا بواجهة واضحة.
-2. لا تنسخ Skill أو محتوى غير متاح لك ولا تنسب module إلى مؤلف خارجي.
-3. حدّث `SKILL.md` الرئيسي إذا كانت الوحدة جزءًا من المسار الإلزامي.
-4. أضف مثال استخدام عند تغيير workflow.
-5. لا تضف أسرارًا أو شهادات توقيع أو ملفات مستخدمين.
-6. تحقق من بنية YAML frontmatter قبل فتح Pull Request.
+Design and engineering improvements are welcome. When adding a new module:
+1. Add a concise `SKILL.md` with a clear interface.
+2. Do not copy unavailable skills or content, and do not attribute a module to an external author.
+3. Update the main `SKILL.md` if the module is part of the required workflow.
+4. Add a usage example when changing the workflow.
+5. Do not add secrets, signing certificates, or user files.
+6. Validate the YAML front matter before opening a pull request.

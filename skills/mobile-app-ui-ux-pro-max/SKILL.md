@@ -2,9 +2,6 @@
 name: mobile-app-ui-ux-pro-max
 description: Design production-quality mobile UX with hierarchy, accessibility, states, and responsive behavior.
 ---
-
 # Mobile App UI/UX Pro Max
-
-حدّد المستخدم الأساسي وأهم هدف قبل رسم الشاشة. صمّم Mobile-first مع تنقل متوقع، مناطق لمس مريحة، دعم RTL عند الحاجة، وتباين قوي. لكل شاشة حدّد: focal point، supporting content، primary action، secondary actions، feedback/status.
-
-لا تعتبر الواجهة مكتملة قبل مراجعة حالات loading وempty وerror وsuccess وdisabled، والمحتوى الطويل، والشاشات الصغيرة، وDark Mode، وReduce Motion. أعطِ الأيقونات labels مفيدة ولا تستخدم اللون وحده للإبلاغ عن الحالة. راجع التدفق من فتح التطبيق حتى إتمام المهمة الأساسية.
+Identify the primary user and the most important goal before designing the screen. Use a mobile-first approach with predictable navigation, comfortable touch targets, RTL support when required, and strong contrast. For every screen, define the focal point, supporting content, primary action, secondary actions, and feedback/status area.
+Do not consider the interface complete until you review loading, empty, error, success, and disabled states, long content, small screens, dark mode, and reduced motion. Give icons meaningful labels and never use color alone to communicate state. Review the flow from app launch through completion of the primary task.

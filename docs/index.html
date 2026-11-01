@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AppKiln — Mobile Build Skill</title>
-  <meta name="description" content="AppKiln يحول فكرة التطبيق إلى MVP حقيقي مع IPA عبر GitHub Actions.">
+  <meta name="description" content="AppKiln turns an app idea into a real Flutter or Swift MVP with an IPA build through GitHub Actions.">
   <style>
     :root { color-scheme: dark; --bg:#0b0d12; --panel:#121722; --line:#263044; --text:#f6f7fb; --muted:#aab3c5; --accent:#b7f36b; --accent-ink:#11170c; }
     * { box-sizing:border-box; }
@@ -13,21 +13,19 @@
     header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:10px 0 76px; }
     .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.03em; }
     .mark { display:grid; place-items:center; width:38px; height:38px; border:1px solid #d8ffa2; border-radius:12px; color:var(--accent); font-size:18px; }
-    .lang { border:1px solid var(--line); background:#151b28; color:var(--text); border-radius:999px; padding:10px 15px; cursor:pointer; font-weight:700; min-width:118px; }
-    .lang:hover, .lang:focus-visible { border-color:var(--accent); outline:3px solid #b7f36b33; }
     .eyebrow { color:var(--accent); font-weight:800; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
     h1 { font-size:clamp(48px, 10vw, 92px); line-height:.95; letter-spacing:-.075em; margin:18px 0 24px; max-width:760px; }
     .lead { color:var(--muted); font-size:clamp(18px, 2.5vw, 24px); line-height:1.55; max-width:680px; margin:0; }
     .actions { display:flex; flex-wrap:wrap; gap:12px; margin:34px 0 80px; }
     a { color:inherit; text-decoration:none; }
     .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:12px; border:1px solid var(--line); font-weight:800; }
+    .button:hover, .button:focus-visible { border-color:var(--accent); outline:3px solid #b7f36b33; }
     .primary { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
     .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
     .card { background:#111621cc; border:1px solid var(--line); border-radius:18px; padding:22px; min-height:170px; }
     .card b { display:block; color:var(--accent); font-size:13px; margin-bottom:28px; }
     .card p { color:var(--muted); line-height:1.65; margin:0; }
     footer { border-top:1px solid var(--line); margin-top:78px; padding-top:20px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; gap:15px; flex-wrap:wrap; }
-    [hidden] { display:none !important; }
     @media (max-width:680px) { header { padding-bottom:54px; } .grid { grid-template-columns:1fr; } .card { min-height:auto; } h1 { font-size:58px; } }
   </style>
 </head>
@@ -35,40 +33,15 @@
   <main>
     <header>
       <a class="brand" href="https://github.com/te3i/appkiln"><span class="mark">A</span><span>AppKiln</span></a>
-      <button class="lang" id="languageToggle" type="button" aria-label="Switch to English">English / EN</button>
     </header>
-
-    <section id="ar" lang="ar" dir="rtl">
-      <div class="eyebrow">مهارة بناء تطبيقات الموبايل</div>
-      <h1>من فكرة صغيرة إلى تطبيق قابل للبناء.</h1>
-      <p class="lead">AppKiln مهارة عابرة لأدوات الذكاء الاصطناعي، تحوّل فكرتك إلى MVP حقيقي بـ Flutter أو Swift، مع تصميم متماسك وبناء IPA عبر GitHub Actions.</p>
-      <div class="actions"><a class="button primary" href="https://github.com/te3i/appkiln">افتح المستودع</a><a class="button" href="https://github.com/te3i/appkiln/blob/main/SKILL.md">اقرأ المهارة</a></div>
-      <div class="grid"><article class="card"><b>01 / تصميم</b><p>اتجاه بصري، نظام تصميم، دعم RTL وDark Mode، وحالات واضحة لكل شاشة.</p></article><article class="card"><b>02 / تنفيذ</b><p>Flutter أو Swift/iOS مع بنية قابلة للتوسع، اختبارات، وتجربة استخدام مصقولة.</p></article><article class="card"><b>03 / تسليم</b><p>مستودع GitHub وWorkflow يبني IPA غير موقّع ويتحقق من الأثر والبصمة.</p></article></div>
-    </section>
-
-    <section id="en" lang="en" dir="ltr" hidden>
+    <section lang="en">
       <div class="eyebrow">Mobile app building skill</div>
       <h1>From a small idea to a buildable app.</h1>
       <p class="lead">AppKiln is a cross-AI skill that turns your idea into a real Flutter or Swift MVP, with a coherent design system and an IPA build through GitHub Actions.</p>
       <div class="actions"><a class="button primary" href="https://github.com/te3i/appkiln">Open repository</a><a class="button" href="https://github.com/te3i/appkiln/blob/main/SKILL.md">Read the skill</a></div>
       <div class="grid"><article class="card"><b>01 / Design</b><p>Visual direction, design system, RTL and dark mode support, and clear screen states.</p></article><article class="card"><b>02 / Build</b><p>Flutter or Swift/iOS with an extensible structure, checks, and a polished user experience.</p></article><article class="card"><b>03 / Deliver</b><p>GitHub repository and workflow that builds an unsigned IPA and verifies its artifact and checksum.</p></article></div>
     </section>
-
     <footer><span>AppKiln · open for any app idea</span><a href="https://github.com/te3i/appkiln">github.com/te3i/appkiln</a></footer>
   </main>
-  <script>
-    const button = document.getElementById('languageToggle');
-    const ar = document.getElementById('ar');
-    const en = document.getElementById('en');
-    button.addEventListener('click', () => {
-      const isArabic = !ar.hidden;
-      ar.hidden = isArabic;
-      en.hidden = !isArabic;
-      document.documentElement.lang = isArabic ? 'en' : 'ar';
-      document.documentElement.dir = isArabic ? 'ltr' : 'rtl';
-      button.textContent = isArabic ? 'العربية / AR' : 'English / EN';
-      button.setAttribute('aria-label', isArabic ? 'التبديل إلى العربية' : 'Switch to English');
-    });
-  </script>
 </body>
 </html>

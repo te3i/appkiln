@@ -2,11 +2,7 @@
 name: flutter-ui-design-thienqo
 description: Apply advanced Flutter UI implementation patterns with polished interaction details.
 ---
-
 # Flutter UI Design — thienqo
-
-طبّق التصميم باستخدام Flutter idioms نظيفة: مكونات صغيرة، `ThemeExtension` عند الحاجة، layouts مرنة، `SafeArea`، وscroll behavior مناسب. استخدم Material أو Cupertino باتساق، ولا تخلط أنماطًا متعارضة.
-
-أضف motion قصيرًا وهادفًا عبر opacity/transform، واحترم `MediaQuery.disableAnimations` وReduce Motion. اجعل النقر والضغط والتحميل والنجاح مرئية، وامنح عناصر icon-only labels. لا تجعل المحتوى الأساسي يعتمد على animation أو gesture مخفي.
-
-هذا ملف توافق أصلي داخل الحزمة، وليس ادعاءً بأنه النسخة الرسمية لأي مؤلف خارجي. إذا كانت نسخة رسمية متاحة في بيئة المستخدم، فضّلها.
+Implement the design using clean Flutter idioms: small components, `ThemeExtension` when needed, flexible layouts, `SafeArea`, and appropriate scroll behavior. Use Material or Cupertino consistently; do not mix conflicting styles.
+Add short, purposeful motion through opacity and transform, and respect `MediaQuery.disableAnimations` and reduced-motion preferences. Make tapping, pressing, loading, and success visible, and give icon-only elements accessible labels. Do not make essential content depend on animation or hidden gestures.
+This is an original compatibility file included in the package; it does not claim to be an official version by any external author. If an official version is available in the user's environment, prefer it.

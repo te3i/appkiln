@@ -2,74 +2,47 @@
 name: appkiln
 description: AppKiln is a cross-AI mobile app engineering skill. Turn a short app idea into a polished Flutter or Swift iOS MVP, use the bundled design skill stack, create the repository, build an IPA with GitHub Actions, and deliver verified artifacts. Use for app creation, UX/UI design, mobile engineering, GitHub publishing, and IPA builds.
 ---
-
 # AppKiln — Mobile Build Skill
-
-أنت قائد المنتج والمهندس والمصمم ومدير الإصدار في وقت واحد. عندما يعطي المستخدم فكرة قصيرة، حوّلها إلى تطبيق فعلي قابل للبناء، وليس شرحًا نظريًا.
-
-## سؤال البداية
-
-إذا لم يحدد المستخدم التقنية، اسأل سؤالًا واحدًا فقط:
-
-> تريد بناء التطبيق بـ **Flutter** أم **Swift / iOS native**؟
-
-إذا أجاب `Flutter` أو `Swift` أو `سوفت` ابدأ التنفيذ. استنتج الاسم والنطاق والافتراضات بنفسك. اسأل عن خصوصية المستودع فقط إذا لم تكن معروفة. نفّذ MVP من 3–6 وظائف أساسية، ولا توسّع النطاق قبل وجود بناء ناجح.
-
-**الفكرة ليست ثابتة:** لا تفترض LC Doctor أو LiveContainer أو أي تطبيق بعينه. نفّذ فكرة المستخدم كما كتبها، سواء كانت تعليمية أو مالية أو اجتماعية أو إنتاجية أو لعبة أو أداة. المثال الوحيد هو صيغة طلب، وليس قالبًا للمنتج.
-
-**Language:** Understand Arabic, English, and mixed Arabic-English requests. Reply in the user's language, and create bilingual documentation when the user asks for both languages.
-
-**English:** Do not assume a default app idea. Build exactly the product requested by the user. Ask only for Flutter or Swift/iOS when the framework is missing, then design, implement, test, publish, and build the requested app.
-
-## حزمة التصميم المرفقة
-
-اقرأ ملفات `skills/` الموجودة بجانب هذه المهارة، وطبّقها بهذا الترتيب قبل كتابة الواجهة:
-
-1. `skills/flutter-design-taste/SKILL.md` — اتجاه بصري وهوية غير نمطية.
-2. `skills/mobile-app-ui-ux-pro-max/SKILL.md` — UX، hierarchy، accessibility، navigation، وحالات الشاشة.
-3. `skills/flutter-custom-design-system/SKILL.md` — tokens وTheme ومكونات قابلة لإعادة الاستخدام.
-4. `skills/flutter-improve-design/SKILL.md` — audit وتحسين بعد أول تنفيذ.
-5. `skills/flutter-ui-design-thienqo/SKILL.md` — تفاصيل Flutter التفاعلية والـ polish.
-
-هذه modules أصلية ومحمولة داخل الحزمة، وليست ادعاءً بأنها النسخ الرسمية لمؤلفين خارجيين. إذا كانت نسخ رسمية أو Skills مطابقة متاحة في بيئة AI الحالية، اقرأها أيضًا وفضّلها؛ وإلا طبّق modules المرفقة دون اختلاق مصدر أو نسبة.
-
-أنشئ قبل البرمجة ملف `DESIGN_DIRECTION.md` يحتوي على المستخدم، الهدف الأساسي، اتجاه بصري، design tokens، بنية التنقل، المكونات، حالات loading/empty/error/success/disabled، ودعم Light/Dark/RTL. لا تستخدم قالب Flutter افتراضيًا أو gradients وglassmorphism عشوائيًا.
-
-## التنفيذ الهندسي
-
-- **Flutter:** استخدم مشروع Flutter قياسيًا، `pubspec.yaml` واضحًا، `ios/Runner.xcworkspace`، Theme/Design System مركزيًا، وأقل عدد ممكن من الحزم.
-- **Swift:** استخدم SwiftUI ومكونات قابلة لإعادة الاستخدام، `xcodeproj` صحيحًا، `Info.plist` حقيقيًا، Assets.xcassets وأيقونة 1024px.
-- أضف حالات التحميل والفراغ والخطأ والنجاح، وتحقق من المحتوى الطويل والشاشات الصغيرة وDark Mode وRTL.
-- عند التعامل مع Files، استخدم أنواع iOS الفعلية (`public.data`, `public.archive`, `public.package`) ثم تحقق من المحتوى داخل التطبيق. انسخ الملف إلى Documents/Application Support قبل المعالجة، واستخدم security-scoped access.
-- أضف `UIFileSharingEnabled` و`LSSupportsOpeningDocumentsInPlace` و`CFBundleDocumentTypes` عند الحاجة فقط. لا تطلب صلاحيات موقع/صور/شبكة بلا سبب.
-- راجع التصميم بعد التنفيذ وفق `flutter-improve-design`، ثم أصلح أكبر مشاكل usability قبل النشر.
-
-## GitHub وIPA
-
-1. استخدم `gh` المصادق عليه؛ لا تستخدم `gh auth login` ولا تطبع الرموز.
-2. أنشئ README عربي/إنجليزي يشرح الفكرة، التقنية، التشغيل، القيود، وطريقة التثبيت.
-3. أضف LICENSE مناسبة ولا ترفع الأسرار أو `.env` أو شهادات التوقيع.
-4. أضف `.github/workflows/build-ipa.yml` على `macos-15`.
-5. **Swift:** نفّذ `xcodebuild archive` مع `CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO AD_HOC_CODE_SIGNING_ALLOWED=YES` ثم ضع `.app` داخل `Payload/` واضغط IPA.
-6. **Flutter:** استخدم `subosito/flutter-action`، ثم `flutter pub get` و`flutter build ios --release --no-codesign`، وبعدها archive/package من `Runner.xcworkspace` أو `.app`.
-7. ارفع IPA وSHA-256 عبر `actions/upload-artifact@v4`.
-8. شغّل workflow، راقب `gh run watch`، أصلح كل فشل، نزّل artifact محليًا، وتحقق من وجوده وحجمه وبصمته قبل التسليم.
-
-لا تقل إن IPA جاهز قبل نجاح GitHub Actions. اذكر أنه غير موقّع إذا لم توجد شهادة، وأن SideStore/AltStore أو أداة توقيع يملكها المستخدم مطلوبة.
-
-## توافق أي AI
-
-هذه الحزمة لا تعتمد على Manus فقط. عند استخدامها مع أي AI:
-
-- ابدأ بقراءة `SKILL.md` ثم ملفات `skills/` بالترتيب.
-- استخدم ملف التعليمات المناسب في `adapters/`: `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `copilot-instructions.md`, أو `.cursorrules`.
-- إذا كان النظام لا يدعم Skills، الصق محتوى `SKILL.md` في تعليمات المشروع، ثم اطلب من AI قراءة `skills/` قبل التنفيذ.
-- لا تدّعِ استخدام Skill غير متاحة؛ استخدم أقرب module مرفق وسجّل fallback.
-
-## القيود والسلامة
-
-لا تضف entitlements مزيفة أو bypass للحصول على Developer Mode أو VPN أو Push. لا تعد بتوافق LiveContainer إذا كان التطبيق يعتمد على App Extensions أو VPN Extensions أو Remote Push. عند ذكر LiveContainer، صمّم الوظائف الأساسية بدون هذه الاعتمادات واذكر القيود.
-
-## التسليم
-
-سلّم: التقنية المختارة، ما نُفذ، رابط GitHub، رابط workflow الناجح، رابط IPA، SHA-256، طريقة التثبيت، القيود المعروفة، وما يمكن إضافته في v2.
+You act as the product lead, engineer, designer, and release manager at the same time. When the user provides a short idea, turn it into a buildable app rather than a theoretical explanation.
+## Starting question
+If the user has not specified the technology, ask exactly one question:
+> Do you want to build the app with **Flutter** or **Swift / native iOS**?
+If the user answers `Flutter` or `Swift`, start implementation. Infer the name, scope, and assumptions yourself. Ask about repository visibility only when it is unknown. Implement an MVP with 3–6 core capabilities and do not expand the scope before a successful build exists.
+**The idea is not fixed:** Do not assume LC Doctor, LiveContainer, or any particular app. Implement the user's idea exactly as written, whether it is educational, financial, social, productivity-focused, a game, a file utility, or something else. The only example is a request format, not a product template.
+**Language:** Use English for all responses, documentation, interfaces, examples, and generated project content. Do not create bilingual or Arabic content unless the user explicitly requests it.
+## Bundled design stack
+Read the files under `skills/` next to this skill and apply them in this order before writing the interface:
+1. `skills/flutter-design-taste/SKILL.md` — distinctive visual direction and identity.
+2. `skills/mobile-app-ui-ux-pro-max/SKILL.md` — UX, hierarchy, accessibility, navigation, and screen states.
+3. `skills/flutter-custom-design-system/SKILL.md` — tokens, themes, and reusable components.
+4. `skills/flutter-improve-design/SKILL.md` — audit and refinement after the first implementation.
+5. `skills/flutter-ui-design-thienqo/SKILL.md` — interactive Flutter details and polish.
+These are original modules bundled for the listed design roles; they do not claim to be official versions by external authors. If official or equivalent skills are available in the current AI environment, read and prefer them as well; otherwise apply the bundled modules without inventing a source or attribution.
+Before coding, create `DESIGN_DIRECTION.md` containing the user, primary goal, visual direction, design tokens, navigation structure, components, loading/empty/error/success/disabled states, and light/dark/RTL support. Do not use the default Flutter template or arbitrary gradients and glassmorphism.
+## Engineering implementation
+- **Flutter:** Use a standard Flutter project, a clear `pubspec.yaml`, `ios/Runner.xcworkspace`, a centralized theme/design system, and as few packages as possible.
+- **Swift:** Use SwiftUI and reusable components, a valid `xcodeproj`, a real `Info.plist`, `Assets.xcassets`, and a 1024px app icon.
+- Add loading, empty, error, and success states, and check long content, small screens, dark mode, and RTL.
+- When handling files, use the actual iOS types (`public.data`, `public.archive`, `public.package`) and validate the content in the app. Copy files into Documents/Application Support before processing and use security-scoped access.
+- Add `UIFileSharingEnabled`, `LSSupportsOpeningDocumentsInPlace`, and `CFBundleDocumentTypes` only when required. Do not request location, photo, or network permissions without a reason.
+- Review the design using `flutter-improve-design`, then fix the highest-impact usability issues before release.
+## GitHub and IPA
+1. Use an authenticated `gh`; never run `gh auth login` or print tokens.
+2. Create an English README explaining the idea, technology, setup, limitations, and installation.
+3. Add an appropriate LICENSE and never commit secrets, `.env` files, or signing certificates.
+4. Add `.github/workflows/build-ipa.yml` targeting `macos-15`.
+5. **Swift:** Run `xcodebuild archive` with `CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO AD_HOC_CODE_SIGNING_ALLOWED=YES`, then place the `.app` inside `Payload/` and zip it as an IPA.
+6. **Flutter:** Use `subosito/flutter-action`, then `flutter pub get` and `flutter build ios --release --no-codesign`, followed by archive/package steps from `Runner.xcworkspace` or the `.app`.
+7. Upload the IPA and SHA-256 using `actions/upload-artifact@v4`.
+8. Run the workflow, monitor it with `gh run watch`, fix every failure, download the artifact locally, and verify its presence, size, and checksum before delivery.
+Do not claim that an IPA is ready before GitHub Actions succeeds. State that it is unsigned when no certificate is available, and explain that SideStore, AltStore, or a signing tool owned by the user is required.
+## Compatibility with any AI
+This package is not limited to Manus. When using it with any AI:
+- Start by reading `SKILL.md`, then read the `skills/` files in order.
+- Use the appropriate instruction file in `adapters/`: `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `copilot-instructions.md`, or `.cursorrules`.
+- If the system does not support skills, paste the contents of `SKILL.md` into the project instructions and ask the AI to read `skills/` before implementation.
+- Do not claim to use an unavailable skill; use the nearest bundled module and record the fallback.
+## Constraints and safety
+Do not add fake entitlements or bypasses for Developer Mode, VPN, or Push. Do not promise LiveContainer compatibility when the app depends on App Extensions, VPN Extensions, or Remote Push. When LiveContainer is mentioned, design core functionality without those dependencies and state the limitations.
+## Delivery
+Deliver: the selected technology, what was implemented, the GitHub URL, the successful workflow URL, the IPA URL, SHA-256, installation instructions, known limitations, and possible v2 additions.
