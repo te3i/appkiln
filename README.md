@@ -10,6 +10,8 @@ AppKiln turns an app idea into a polished Flutter or Swift mobile MVP. It connec
 [![Android APK](https://img.shields.io/badge/Android-APK-3DDC84?logo=android&logoColor=white)](SKILL.md)
 [![iOS IPA](https://img.shields.io/badge/iOS-IPA-000000?logo=apple&logoColor=white)](SKILL.md)
 [![GitHub Actions](https://img.shields.io/badge/build-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](SKILL.md)
+[![Website](https://img.shields.io/badge/website-Cloudflare%20Pages-f38020?logo=cloudflare&logoColor=white)](https://appkiln.pages.dev)
+[![Latest release](https://img.shields.io/github/v/release/te3i/appkiln?display_name=tag&sort=semver)](https://github.com/te3i/appkiln/releases/latest)
 
 > **Official website:** [appkiln.pages.dev](https://appkiln.pages.dev)<br>
 > **Repository releases:** [github.com/te3i/appkiln/releases](https://github.com/te3i/appkiln/releases)
