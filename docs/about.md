@@ -1,5 +1,8 @@
 # About AppKiln
 
+> **Official website:** [appkiln.pages.dev](https://appkiln.pages.dev)<br>
+> **Releases:** [github.com/te3i/appkiln/releases](https://github.com/te3i/appkiln/releases)
+
 AppKiln is a universal mobile product build skill for turning a product idea into a polished Flutter or Swift application. It is designed for AI-assisted development, but it is not tied to one model or coding environment.
 
 ## What AppKiln coordinates
@@ -25,3 +28,7 @@ A completed AppKiln workflow keeps the repository and release process visible. D
 ## Website
 
 The public AppKiln website is hosted entirely on [Cloudflare Pages](https://appkiln.pages.dev). The repository keeps the documentation and skill source organized; the deployed website bundle is managed in Cloudflare rather than stored in a `website/` directory here.
+
+## Releases
+
+AppKiln uses GitHub Releases for meaningful milestones. Release notes identify what changed in the core orchestration, five-module design pipeline, AI adapters, delivery workflows, documentation, website, and known limitations. This keeps the public history understandable and avoids publishing random snapshots.

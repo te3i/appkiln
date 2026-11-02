@@ -11,6 +11,9 @@ AppKiln turns an app idea into a polished Flutter or Swift mobile MVP. It connec
 [![iOS IPA](https://img.shields.io/badge/iOS-IPA-000000?logo=apple&logoColor=white)](SKILL.md)
 [![GitHub Actions](https://img.shields.io/badge/build-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](SKILL.md)
 
+> **Official website:** [appkiln.pages.dev](https://appkiln.pages.dev)<br>
+> **Repository releases:** [github.com/te3i/appkiln/releases](https://github.com/te3i/appkiln/releases)
+
 ## About AppKiln
 
 AppKiln is a universal mobile product build skill for AI-assisted Flutter and Swift development. It coordinates five specialist design modules through explicit handoffs, then carries the implementation through GitHub and APK or IPA delivery. Read the full [About AppKiln guide](docs/about.md).
@@ -68,6 +71,13 @@ Read the detailed guides:
 - **Both artifacts:** creates both platform workflows when the user requests APK and IPA.
 
 Every delivery includes the GitHub repository, successful Actions workflow, artifact URL, SHA-256 checksum, installation instructions, and a concise implementation report.
+
+## Releases
+
+Releases are reserved for meaningful, reviewable AppKiln milestones rather than random file changes. A release should document the workflow or design-contract changes, adapter updates, delivery behavior, documentation improvements, and any known limitations.
+
+- [View all releases](https://github.com/te3i/appkiln/releases)
+- [Current release: v1.0.0](https://github.com/te3i/appkiln/releases/tag/v1.0.0)
 
 ## Use with any AI
 
