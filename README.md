@@ -11,9 +11,13 @@ AppKiln turns an app idea into a polished Flutter or Swift mobile MVP. It connec
 [![iOS IPA](https://img.shields.io/badge/iOS-IPA-000000?logo=apple&logoColor=white)](SKILL.md)
 [![GitHub Actions](https://img.shields.io/badge/build-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](SKILL.md)
 
+## About AppKiln
+
+AppKiln is a universal mobile product build skill for AI-assisted Flutter and Swift development. It coordinates five specialist design modules through explicit handoffs, then carries the implementation through GitHub and APK or IPA delivery. Read the full [About AppKiln guide](docs/about.md).
+
 ## AppKiln website
 
-Visit the polished AppKiln landing page on [Cloudflare Pages](https://appkiln.pages.dev). The complete static source is available in [`website/`](website/), so the repository, the live site, and the five-skill design pipeline stay connected in one place.
+Visit the polished AppKiln landing page on [Cloudflare Pages](https://appkiln.pages.dev). The deployed site bundle is managed in Cloudflare; this repository stays focused on the skill, adapters, templates, examples, and documentation.
 
 ## Start with one request
 
@@ -48,7 +52,7 @@ All handoffs are recorded in one shared [`DESIGN_DIRECTION.md`](templates/DESIGN
 - [`adapters/`](adapters/) — instructions for Claude, Gemini, Codex, Cursor, GitHub Copilot, OpenCode, and any other AI.
 - [`templates/`](templates/) — the shared design-direction template.
 - [`examples/`](examples/) — precise request examples.
-- [`docs/`](docs/) — architecture, pipeline, and delivery documentation.
+- [`docs/`](docs/) — About, architecture, pipeline, delivery documentation, and visual assets.
 
 Read the detailed guides:
 
