@@ -13,7 +13,7 @@ AppKiln turns an app idea into a polished Flutter or Swift mobile MVP. It connec
 
 ## AppKiln website
 
-Visit the polished AppKiln landing page on [Cloudflare Pages](https://appkiln.pages.dev). The complete static source is available in [`website/`](website/), so the repository, the live site, and the five-skill design pipeline stay connected in one place.
+Visit the polished AppKiln landing page on [Cloudflare Workers](https://appkiln-site.sopdvv.workers.dev). The complete static source is available in [`website/`](website/), so the repository, the live site, and the five-skill design pipeline stay connected in one place.
 
 ## Start with one request
 
