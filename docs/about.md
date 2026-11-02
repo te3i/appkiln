@@ -27,7 +27,7 @@ A completed AppKiln workflow keeps the repository and release process visible. D
 
 ## Website
 
-The public AppKiln website is hosted entirely on [Cloudflare Pages](https://appkiln.pages.dev). The repository keeps the documentation and skill source organized; the deployed website bundle is managed in Cloudflare rather than stored in a `website/` directory here.
+The public [AppKiln official website](https://appkiln.pages.dev) presents the product, workflow, and design philosophy. The repository keeps the skill source and documentation organized.
 
 ## Releases
 

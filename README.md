@@ -22,7 +22,7 @@ AppKiln is a universal mobile product build skill for AI-assisted Flutter and Sw
 
 ## AppKiln website
 
-Visit the polished AppKiln landing page on [Cloudflare Pages](https://appkiln.pages.dev). The deployed site bundle is managed in Cloudflare; this repository stays focused on the skill, adapters, templates, examples, and documentation.
+Visit the polished [AppKiln official website](https://appkiln.pages.dev). This repository stays focused on the skill, adapters, templates, examples, and documentation.
 
 ## Start with one request
 
